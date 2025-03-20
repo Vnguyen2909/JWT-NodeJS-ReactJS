@@ -4,7 +4,11 @@
     "password": "mysql",
     "database": "jwt",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "definr": {
+      "freezeTableName": true
+    },
+    "logging": false
   },
   "test": {
     "username": "root",

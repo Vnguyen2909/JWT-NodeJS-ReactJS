@@ -1,4 +1,4 @@
-const { Sequelize } = require('sequelize');
+const { Sequelize, Model } = require('sequelize');
 
 const sequelize = new Sequelize('jwt', 'root', 'mysql', {
     host: 'localhost',
@@ -14,4 +14,4 @@ const connection = async () => {
   }
 }
 
-export default connection;
+export default sequelize;

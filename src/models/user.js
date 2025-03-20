@@ -1,13 +1,14 @@
 'use strict';
-const { Model } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize) => {
   class User extends Model {
     static associate(models) {
       // Define associations here (nếu cần)
     }
   }
-  //object realtion mapping
+  
+  // Object Relational Mapping
   User.init(
     {
       email: DataTypes.STRING,
@@ -15,12 +16,11 @@ module.exports = (sequelize, DataTypes) => {
       password: DataTypes.STRING,
     },
     {
-      timestamps: true,
-    },
-    {
-      sequelize,
+      sequelize,  
       modelName: 'User',
+      timestamps: true,  // Sequelize sẽ tự động thêm createdAt và updatedAt
     }
   );
+
   return User;
 };
